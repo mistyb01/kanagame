@@ -41,14 +41,14 @@ implementation steps for v1
 step 1: setup, simple flashcard functionality
 
 - [x] set up html- a text input, submit button, div for kana to appear, and div for score + feedback on whether they were correct
-- [] data structure for kana and answers.. an array of objects for now?
-- [] render one kana at a time on the ui
-- [] click a button to go to the next kana
+- [x] data structure for kana and answers.. an array of objects for now
+- [x] render one kana at a time on the ui
+- [x] click a button to go to the next kana
 
 step 2: implement answering functionality
 
-- [] if user submits correct answer, go to next card.
-- [] if user submits wrong answer, give feedback (say what the correct answer was, then have them type it to continue)
+- [x] if user submits correct answer, go to next card.
+- [x] if user submits wrong answer, give feedback (say what the correct answer was, then have them type it to continue)
 - [] add a counter for # correct and # wrong
 
 step 3: adding randomization
