@@ -49,8 +49,9 @@ step 2: implement answering functionality
 
 - [x] if user submits correct answer, go to next card.
 - [x] if user submits wrong answer, give feedback (say what the correct answer was, then have them type it to continue)
-- [] add a counter for # correct and # wrong
+- [x] add a counter for # correct and # wrong
 
 step 3: adding randomization
 
 - [] find a way to present the user with the kana in a random order (by default)
+- [] as kana get answered, pop them out of the currentGame array, and put them into either the correct or incorrect array (so we can display the correct/wrong answers at the end, or give ppl the option to quiz with just the incorrects)

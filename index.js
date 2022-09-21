@@ -1,35 +1,4 @@
-const hiragana = [
-    {
-        kana: "あ",
-        romaji: "a",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "い",
-        romaji: "i",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "う",
-        romaji: "u",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "え",
-        romaji: "e",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "お",
-        romaji: "o",
-        type: "hiragana",
-        row: "a"
-    },
-]
+import { kana } from './quizdata.js';
 
 const startBtn = document.querySelector('#start-button');
 startBtn.addEventListener('click', startQuiz);
@@ -46,7 +15,7 @@ let currentIndex = 0;
 function startQuiz() {
     startBtn.style.display = 'none';
     document.querySelector('#game').style.display = 'block';
-    cardDisplay.innerText = hiragana[0].kana;
+    cardDisplay.innerText = kana[0].kana;
     answerInput.focus();
 }
 
@@ -54,24 +23,21 @@ let wrongBefore = false;
 function nextCard() {
     answerInput.focus();
     statusText.innerText = "";
-    if (answerInput.value == hiragana[currentIndex].romaji) {
+    if (answerInput.value == kana[currentIndex].romaji) {
         if (!wrongBefore) {
             correctCounter++;
         }
         currentIndex++;
-        cardDisplay.innerText = hiragana[currentIndex].kana;
+        cardDisplay.innerText = kana[currentIndex].kana;
         wrongBefore = false;
     } else {
         incorrectCounter++;
-        statusText.innerText = "incorrect, the answer is " + hiragana[currentIndex].romaji;
+        statusText.innerText = "incorrect, the answer is " + kana[currentIndex].romaji;
         wrongBefore = true;
     }
     document.querySelector('#correct').innerText = correctCounter + ' correct';
     document.querySelector('#incorrect').innerText = incorrectCounter + ' incorrect';
     answerInput.value = "";
-
-
-
 }
 
 function checkKey(e) {
