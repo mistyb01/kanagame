@@ -59,5 +59,5 @@ export const kana = [
         romaji: "ko",
         type: "hiragana",
         row: "ka"
-    },
+    }
 ]

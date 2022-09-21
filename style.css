@@ -46,6 +46,10 @@ main {
     display: none;
 }
 
+#game-finish {
+    display: none;
+}
+
 #status {
     color: rgb(255, 135, 155);
     font-size: 1.25rem;
@@ -54,9 +58,11 @@ main {
 #correct {
     color: rgb(183, 255, 119);
 }
+
 #incorrect {
     color: rgb(243, 120, 120);
 }
+
 #score {
-    margin-top: 100px;
+    margin-top: 50px;
 }

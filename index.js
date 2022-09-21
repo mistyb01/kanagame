@@ -23,21 +23,27 @@ let wrongBefore = false;
 function nextCard() {
     answerInput.focus();
     statusText.innerText = "";
+
     if (answerInput.value == kana[currentIndex].romaji) {
         if (!wrongBefore) {
             correctCounter++;
         }
         currentIndex++;
-        cardDisplay.innerText = kana[currentIndex].kana;
-        wrongBefore = false;
+        if (currentIndex < kana.length) {
+            cardDisplay.innerText = kana[currentIndex].kana;
+            wrongBefore = false;
+        } else {
+            document.querySelector('#game').style.display = 'none';
+            document.querySelector('#game-finish').style.display = 'block';
+        }
     } else {
         incorrectCounter++;
         statusText.innerText = "incorrect, the answer is " + kana[currentIndex].romaji;
         wrongBefore = true;
     }
+    answerInput.value = "";
     document.querySelector('#correct').innerText = correctCounter + ' correct';
     document.querySelector('#incorrect').innerText = incorrectCounter + ' incorrect';
-    answerInput.value = "";
 }
 
 function checkKey(e) {
