@@ -53,5 +53,12 @@ step 2: implement answering functionality
 
 step 3: adding randomization
 
-- [] find a way to present the user with the kana in a random order (by default)
-- [] as kana get answered, pop them out of the currentGame array, and put them into either the correct or incorrect array (so we can display the correct/wrong answers at the end, or give ppl the option to quiz with just the incorrects)
+- [x] find a way to present the user with the kana in a random order (by default)
+- [x] as kana get answered, pop them out of the currentGame array, and put them into either the correct or incorrect array (so we can display the correct/wrong answers at the end, or give ppl the option to quiz with just the incorrects)
+
+step 4: customization!
+
+- [] at the start of the game, be able to select which rows of kana you want to practice.
+- [] choose to practice hiragana, katakana, or both
+- [] choose to include diacritics
+- [] choose to include monographs, digraphs, or both

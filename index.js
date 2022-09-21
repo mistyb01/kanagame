@@ -9,23 +9,21 @@ const startBtn = document.querySelector('#start-button');
 startBtn.addEventListener('click', startQuiz);
 
 // default values
-let correctCounter = 0;
-let incorrectCounter = 0;
+
 let currentIndex = Math.floor(Math.random() * kana.length);
 // get random index: Math.floor(Math.random() * kana.length);
 
 // arrays
-const currentGame = [...kana];
-const correctCards = [];
-const incorrectCards = [];
+let currentGame = [...kana];
+let correctCards = [];
+let incorrectCards = [];
 
 function startQuiz() {
     startBtn.style.display = 'none';
     document.querySelector('#game').style.display = 'block';
     cardDisplay.innerText = currentGame[currentIndex].kana;
     answerInput.focus();
-    document.querySelector('#correct').innerText = correctCounter + ' correct';
-    document.querySelector('#incorrect').innerText = incorrectCounter + ' incorrect';
+    updateScoreUI();
 }
 
 let wrongBefore = false;
@@ -34,16 +32,17 @@ function nextCard() {
     statusText.innerText = "";
     checkAnswer();
     answerInput.value = "";
-    document.querySelector('#correct').innerText = correctCounter + ' correct';
-    document.querySelector('#incorrect').innerText = incorrectCounter + ' incorrect';
+    updateScoreUI();
+}
+
+function updateScoreUI() {
+    document.querySelector('#correct').innerText = correctCards.length + ' correct';
+    document.querySelector('#incorrect').innerText = incorrectCards.length + ' incorrect';
 }
 
 function checkAnswer() {
     
     if (answerInput.value == currentGame[currentIndex].romaji) {
-        if (!wrongBefore) {
-            correctCounter++;
-        }         
         //add it to the incorrect/correct pile (depends on if they answered right the first time)
         wrongBefore ? incorrectCards.push(currentGame[currentIndex]) : correctCards.push(currentGame[currentIndex]);
         currentGame.splice(currentIndex, 1); //remove the just answered card from the game array
@@ -60,7 +59,6 @@ function checkAnswer() {
             retryBtn.addEventListener('click', retryQuiz);
         }
     } else {
-        incorrectCounter++;
         statusText.innerText = "incorrect, the answer is " + currentGame[currentIndex].romaji;
         wrongBefore = true;
     }
@@ -76,9 +74,10 @@ function checkKey(e) {
 }
 
 function retryQuiz() {
-    correctCounter = 0;
-    incorrectCounter = 0;
     currentIndex = 0;
+    currentGame = [...kana];
+    correctCards = [];
+    incorrectCards = [];
     document.querySelector('#game-finish').style.display = 'none';
     startQuiz();
 }
