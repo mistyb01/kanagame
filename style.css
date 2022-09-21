@@ -29,7 +29,7 @@ button {
     padding: 10px 50px;
     margin-top: 100px;
 }
-#card-display {
+.card-display {
     border: 1px solid;
     width: max-content;
     height: max-content;
@@ -37,33 +37,36 @@ button {
     padding: 10px 40px;
 }
 
-#answer-input {
+.answer-input {
     font-size: 2rem;
     width: 100px;
     text-align: center;
 }
 
-#game {
+.game {
     display: none;
 }
 
-#game-finish {
+.game-finish {
     display: none;
 }
 
-#status {
+.status {
     color: rgb(255, 135, 155);
     font-size: 1.25rem;
 }
 
-#correct {
+.correct {
     color: rgb(183, 255, 119);
 }
 
-#incorrect {
+.incorrect {
     color: rgb(243, 120, 120);
 }
 
-#score {
+.score {
+    border: 1px solid red;
     margin-top: 50px;
+    display: flex;
+    flex-direction: row;
 }

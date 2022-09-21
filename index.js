@@ -1,11 +1,11 @@
 import { kana, kana_short } from './quizdata.js';
 
 // document selectors
-const cardDisplay = document.querySelector('#card-display');
-const answerInput = document.querySelector('#answer-input');
+const cardDisplay = document.querySelector('.card-display');
+const answerInput = document.querySelector('.answer-input');
 answerInput.addEventListener('keydown', checkKey);
-const statusText = document.querySelector('#status');
-const startBtn = document.querySelector('#start-button');
+const statusText = document.querySelector('.status');
+const startBtn = document.querySelector('.start-button');
 startBtn.addEventListener('click', startQuiz);
 
 // arrays
@@ -18,7 +18,7 @@ let currentIndex = Math.floor(Math.random() * currentGame.length);
 
 function startQuiz() {
     startBtn.style.display = 'none';
-    document.querySelector('#game').style.display = 'block';
+    document.querySelector('.game').style.display = 'block';
     cardDisplay.innerText = currentGame[currentIndex].kana;
     answerInput.focus();
     updateScoreUI();
@@ -34,8 +34,8 @@ function nextCard() {
 }
 
 function updateScoreUI() {
-    document.querySelector('#correct').innerText = correctCards.length + ' correct';
-    document.querySelector('#incorrect').innerText = incorrectCards.length + ' incorrect';
+    document.querySelector('.correct').innerText = correctCards.length + ' correct';
+    document.querySelector('.incorrect').innerText = incorrectCards.length + ' incorrect';
 }
 
 function checkAnswer() {
@@ -51,9 +51,9 @@ function checkAnswer() {
         cardDisplay.innerText = currentGame[currentIndex].kana;
         wrongBefore = false;
         } else { //game over!
-            document.querySelector('#game').style.display = 'none';
-            document.querySelector('#game-finish').style.display = 'block';
-            const retryBtn = document.querySelector('#retry-button');
+            document.querySelector('.game').style.display = 'none';
+            document.querySelector('.game-finish').style.display = 'block';
+            const retryBtn = document.querySelector('.retry-button');
             retryBtn.addEventListener('click', retryQuiz);
         }
     } else {
@@ -76,6 +76,6 @@ function retryQuiz() {
     currentGame = [...kana_short];
     correctCards = [];
     incorrectCards = [];
-    document.querySelector('#game-finish').style.display = 'none';
+    document.querySelector('.game-finish').style.display = 'none';
     startQuiz();
 }
