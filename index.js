@@ -1,4 +1,4 @@
-import { kana } from './quizdata.js';
+import { kana, kana_short } from './quizdata.js';
 
 // document selectors
 const cardDisplay = document.querySelector('#card-display');
@@ -8,15 +8,13 @@ const statusText = document.querySelector('#status');
 const startBtn = document.querySelector('#start-button');
 startBtn.addEventListener('click', startQuiz);
 
-// default values
-
-let currentIndex = Math.floor(Math.random() * kana.length);
-// get random index: Math.floor(Math.random() * kana.length);
-
 // arrays
-let currentGame = [...kana];
+let currentGame = [...kana_short];
 let correctCards = [];
 let incorrectCards = [];
+
+let currentIndex = Math.floor(Math.random() * currentGame.length);
+// get random index: Math.floor(Math.random() * kana.length);
 
 function startQuiz() {
     startBtn.style.display = 'none';
@@ -75,7 +73,7 @@ function checkKey(e) {
 
 function retryQuiz() {
     currentIndex = 0;
-    currentGame = [...kana];
+    currentGame = [...kana_short];
     correctCards = [];
     incorrectCards = [];
     document.querySelector('#game-finish').style.display = 'none';
