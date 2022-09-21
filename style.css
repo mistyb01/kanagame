@@ -56,17 +56,18 @@ button {
     font-size: 1.25rem;
 }
 
+
+.score {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 5%;
+}
+
 .correct {
     color: rgb(183, 255, 119);
 }
 
 .incorrect {
     color: rgb(243, 120, 120);
-}
-
-.score {
-    border: 1px solid red;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
 }

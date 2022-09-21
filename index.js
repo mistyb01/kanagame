@@ -8,6 +8,9 @@ const statusText = document.querySelector('.status');
 const startBtn = document.querySelector('.start-button');
 startBtn.addEventListener('click', startQuiz);
 
+const correctDiv = document.querySelector('.correct');
+const incorrectDiv = document.querySelector('.incorrect');
+
 // arrays
 let currentGame = [...kana_short];
 let correctCards = [];
@@ -30,12 +33,14 @@ function nextCard() {
     statusText.innerText = "";
     checkAnswer();
     answerInput.value = "";
-    updateScoreUI();
+    if (currentGame.length != 0) {
+        updateScoreUI();
+    }
 }
 
 function updateScoreUI() {
-    document.querySelector('.correct').innerText = correctCards.length + ' correct';
-    document.querySelector('.incorrect').innerText = incorrectCards.length + ' incorrect';
+    correctDiv.innerText = correctCards.length + ' correct';
+    incorrectDiv.innerText = incorrectCards.length + ' incorrect';
 }
 
 function checkAnswer() {
@@ -55,14 +60,12 @@ function checkAnswer() {
             document.querySelector('.game-finish').style.display = 'block';
             const retryBtn = document.querySelector('.retry-button');
             retryBtn.addEventListener('click', retryQuiz);
+            renderList();
         }
     } else {
         statusText.innerText = "incorrect, the answer is " + currentGame[currentIndex].romaji;
         wrongBefore = true;
     }
-    
-    console.log("correct", correctCards);
-    console.log("incorrect", incorrectCards);
 }
 
 function checkKey(e) {
@@ -79,3 +82,23 @@ function retryQuiz() {
     document.querySelector('.game-finish').style.display = 'none';
     startQuiz();
 }
+
+function renderList() {
+    correctCards.map(item => {
+        const newListItem = document.createElement('p');
+        const listText = document.createTextNode(item.romaji);
+        newListItem.appendChild(listText);
+        correctDiv.appendChild(newListItem);
+    });
+
+    incorrectCards.map(item => {
+        const newListItem = document.createElement('p');
+        const listText = document.createTextNode(item.romaji);
+        newListItem.appendChild(listText);
+        incorrectDiv.appendChild(newListItem);
+    });
+    console.log(incorrectCards);
+    console.log(correctCards);
+}
+
+
