@@ -1,0 +1,38 @@
+* {
+    
+}
+
+body {
+    width: 100%;
+    color: blanchedalmond;
+    background-color: black;
+}
+
+header {
+    text-align: center;
+}
+main {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+#card-display {
+    border: 1px solid;
+    width: max-content;
+    height: max-content;
+    font-size: 108px;
+    padding: 10px 40px;
+}
+
+#answer-input {
+    font-size: 24px;
+    width: 100px;
+}
+
+#game {
+    display: none;
+}
