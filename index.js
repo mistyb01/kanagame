@@ -9,7 +9,7 @@ const startBtn = document.querySelector('.start-button');
 
 startBtn.addEventListener('click', startQuiz);
 
-const filterDiv = document.querySelector('.filters');
+const filterDiv = document.querySelector('.preferences');
 const scoreDiv = document.querySelector('.score');
 const correctDiv = document.querySelector('.correct');
 const incorrectDiv = document.querySelector('.incorrect');
@@ -121,8 +121,6 @@ function filterSet() {
     typeCheckboxes.forEach(filter => {
         if (filter.checked) {
             newArray = newArray.filter(card => card.type == filter.id);
-            // add the filtered values to the new array
-            //filtered.forEach(card => { newArray.push(card); })
         }
     })
 
