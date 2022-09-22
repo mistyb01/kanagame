@@ -6,8 +6,13 @@ const answerInput = document.querySelector('.answer-input');
 answerInput.addEventListener('keydown', checkKey);
 const statusText = document.querySelector('.status');
 const startBtn = document.querySelector('.start-button');
+const selectAllBtn = document.querySelector('.select-all-button');
+const unselectAllBtn = document.querySelector('.unselect-all-button');
 
 startBtn.addEventListener('click', startQuiz);
+selectAllBtn.addEventListener('click', selectAll);
+unselectAllBtn.addEventListener('click', unselectAll);
+
 
 const filterDiv = document.querySelector('.preferences');
 const scoreDiv = document.querySelector('.score');
@@ -106,7 +111,6 @@ function renderList() {
 
 function filterSet() {
     let newArray = []; 
-
     const rowCheckboxes = document.querySelectorAll('.rows input[type=checkbox]');
     rowCheckboxes.forEach(filter => {
         if (filter.checked) {
@@ -116,17 +120,28 @@ function filterSet() {
             filtered.forEach(card => { newArray.push(card); })
         }
     })
-
     const typeCheckboxes = document.querySelectorAll('.type input[type=checkbox]');
     typeCheckboxes.forEach(filter => {
         if (filter.checked) {
             newArray = newArray.filter(card => card.type == filter.id);
         }
     })
-
-
-
     console.log(newArray);
     currentGame = [...newArray];
     currentIndex = Math.floor(Math.random() * currentGame.length);
 }
+
+function selectAll() {
+    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+    checkboxes.forEach(filter => {
+        filter.checked = true;
+    })
+}
+
+function unselectAll() {
+    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+    checkboxes.forEach(filter => {
+        filter.checked = false;
+    })
+}
+

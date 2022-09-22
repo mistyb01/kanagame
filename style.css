@@ -30,6 +30,8 @@ button {
     padding: 10px 50px;
     margin-top: 50px;
 }
+
+
 .card-display {
     border: 1px solid;
     width: max-content;
@@ -84,9 +86,12 @@ button {
     margin-top: 10%;
     font-size: 1.5rem;
 }
-    .preferences h4 {
-        margin-bottom: 20px;
-    }
+.preferences button {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 10px 10px;   
+}
 .filters {
     display: flex;
     flex-direction: row;
@@ -98,6 +103,7 @@ button {
     font-size: 1.25rem;
 
 }
+
 
 
 h5 {
