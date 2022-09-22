@@ -6,8 +6,10 @@ const answerInput = document.querySelector('.answer-input');
 answerInput.addEventListener('keydown', checkKey);
 const statusText = document.querySelector('.status');
 const startBtn = document.querySelector('.start-button');
+
 startBtn.addEventListener('click', startQuiz);
 
+const filterDiv = document.querySelector('.filters');
 const correctDiv = document.querySelector('.correct');
 const incorrectDiv = document.querySelector('.incorrect');
 
@@ -16,10 +18,12 @@ let currentGame = [...kana];
 let correctCards = [];
 let incorrectCards = [];
 
-let currentIndex = Math.floor(Math.random() * currentGame.length);
+let currentIndex = 0;
 // get random index: Math.floor(Math.random() * kana.length);
 
 function startQuiz() {
+    filterSet();
+    filterDiv.style.display = 'none';
     startBtn.style.display = 'none';
     document.querySelector('.game').style.display = 'block';
     cardDisplay.innerText = currentGame[currentIndex].kana;
@@ -86,19 +90,34 @@ function retryQuiz() {
 function renderList() {
     correctCards.map(item => {
         const newListItem = document.createElement('p');
-        const listText = document.createTextNode(item.romaji);
+        const listText = document.createTextNode(item.kana + ': ' + item.romaji);
         newListItem.appendChild(listText);
         correctDiv.appendChild(newListItem);
     });
 
     incorrectCards.map(item => {
         const newListItem = document.createElement('p');
-        const listText = document.createTextNode(item.romaji);
+        const listText = document.createTextNode(item.kana + ': ' + item.romaji);
         newListItem.appendChild(listText);
         incorrectDiv.appendChild(newListItem);
     });
-    console.log(incorrectCards);
-    console.log(correctCards);
+
 }
 
-
+function filterSet() {
+    let newArray = []; 
+    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+    checkboxes.forEach(filter => {
+        if (filter.checked) {
+            //console.log(filter.id);
+            let filtered = [];
+            filtered = kana.filter(card => card.row == filter.id);
+            filtered.forEach(card => { // add the filtered values to the new array
+                newArray.push(card);
+            })
+        }
+    })
+    console.log(newArray);
+    currentGame = [...newArray];
+    currentIndex = Math.floor(Math.random() * currentGame.length);
+}
