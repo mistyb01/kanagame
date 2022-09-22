@@ -10,6 +10,7 @@ const startBtn = document.querySelector('.start-button');
 startBtn.addEventListener('click', startQuiz);
 
 const filterDiv = document.querySelector('.filters');
+const scoreDiv = document.querySelector('.score');
 const correctDiv = document.querySelector('.correct');
 const incorrectDiv = document.querySelector('.incorrect');
 
@@ -17,9 +18,7 @@ const incorrectDiv = document.querySelector('.incorrect');
 let currentGame = [...kana];
 let correctCards = [];
 let incorrectCards = [];
-
 let currentIndex = 0;
-// get random index: Math.floor(Math.random() * kana.length);
 
 function startQuiz() {
     filterSet();
@@ -79,12 +78,13 @@ function checkKey(e) {
 }
 
 function retryQuiz() {
-    currentIndex = 0;
-    currentGame = [...kana];
     correctCards = [];
     incorrectCards = [];
     document.querySelector('.game-finish').style.display = 'none';
-    startQuiz();
+    correctDiv.innerText = '';
+    incorrectDiv.innerText = '';
+    filterDiv.style.display = 'block';
+    startBtn.style.display = 'block';
 }
 
 function renderList() {

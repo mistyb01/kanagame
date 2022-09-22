@@ -58,7 +58,7 @@ step 3: adding randomization
 
 step 4: customization!
 
-- [] at the start of the game, be able to select which rows of kana you want to practice.
+- [x] at the start of the game, be able to select which rows of kana you want to practice.
 - [] choose to practice hiragana, katakana, or both
 - [] choose to include diacritics
 - [] choose to include monographs, digraphs, or both
