@@ -62,3 +62,8 @@ step 4: customization!
 - [] choose to practice hiragana, katakana, or both
 - [] choose to include diacritics
 - [] choose to include monographs, digraphs, or both
+
+step 5: nice ux touches
+
+- [] show progress bar / how many cards are left
+- [x] show correct/incorrect answers on the results

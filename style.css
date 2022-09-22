@@ -64,10 +64,18 @@ button {
     column-gap: 5%;
 }
 
+.score p {
+    font-size: 1.25rem;
+}
+
 .correct {
     color: rgb(183, 255, 119);
 }
 
 .incorrect {
     color: rgb(243, 120, 120);
+}
+
+.rows {
+    text-align: left;
 }

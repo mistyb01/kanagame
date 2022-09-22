@@ -12,7 +12,7 @@ const correctDiv = document.querySelector('.correct');
 const incorrectDiv = document.querySelector('.incorrect');
 
 // arrays
-let currentGame = [...kana_short];
+let currentGame = [...kana];
 let correctCards = [];
 let incorrectCards = [];
 
@@ -76,7 +76,7 @@ function checkKey(e) {
 
 function retryQuiz() {
     currentIndex = 0;
-    currentGame = [...kana_short];
+    currentGame = [...kana];
     correctCards = [];
     incorrectCards = [];
     document.querySelector('.game-finish').style.display = 'none';

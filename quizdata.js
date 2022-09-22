@@ -86,7 +86,7 @@ export const kana = [
         row: "s"
     },
     {
-        kana: "し",
+        kana: "そ",
         romaji: "so",
         type: "hiragana",
         row: "s"
