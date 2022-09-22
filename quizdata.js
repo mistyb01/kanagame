@@ -283,6 +283,294 @@ export const kana = [
         type: "hiragana",
         row: "w"
     },
+
+    ///////////////////////////////////// KATAKANA
+    {
+        kana: "ア",
+        romaji: "a",
+        type: "katakana",
+        row: "a"
+    },
+    {
+        kana: "イ",
+        romaji: "i",
+        type: "katakana",
+        row: "a"
+    },
+    {
+        kana: "ウ",
+        romaji: "u",
+        type: "katakana",
+        row: "a"
+    },
+    {
+        kana: "エ",
+        romaji: "e",
+        type: "katakana",
+        row: "a"
+    },
+    {
+        kana: "オ",
+        romaji: "o",
+        type: "katakana",
+        row: "a"
+    },
+
+    {
+        kana: "カ",
+        romaji: "ka",
+        type: "katakana",
+        row: "k"
+    },
+    {
+        kana: "キ",
+        romaji: "ki",
+        type: "katakana",
+        row: "k"
+    },
+    {
+        kana: "ク",
+        romaji: "ku",
+        type: "katakana",
+        row: "k"
+    },
+    {
+        kana: "ケ",
+        romaji: "ke",
+        type: "katakana",
+        row: "k"
+    },
+    {
+        kana: "コ",
+        romaji: "ko",
+        type: "katakana",
+        row: "k"
+    },
+
+    {
+        kana: "サ",
+        romaji: "sa",
+        type: "katakana",
+        row: "s"
+    },
+    {
+        kana: "シ",
+        romaji: "shi",
+        type: "katakana",
+        row: "s"
+    },
+    {
+        kana: "ス",
+        romaji: "su",
+        type: "katakana",
+        row: "s"
+    },
+    {
+        kana: "セ",
+        romaji: "se",
+        type: "katakana",
+        row: "s"
+    },
+    {
+        kana: "ソ",
+        romaji: "so",
+        type: "katakana",
+        row: "s"
+    },
+
+    {
+        kana: "タ",
+        romaji: "ta",
+        type: "katakana",
+        row: "t"
+    },
+    {
+        kana: "チ",
+        romaji: "chi",
+        type: "katakana",
+        row: "t"
+    },
+    {
+        kana: "ツ",
+        romaji: "tsu",
+        type: "katakana",
+        row: "t"
+    },
+    {
+        kana: "テ",
+        romaji: "te",
+        type: "katakana",
+        row: "t"
+    },
+    {
+        kana: "ト",
+        romaji: "to",
+        type: "katakana",
+        row: "t"
+    },
+
+    {
+        kana: "ナ",
+        romaji: "na",
+        type: "katakana",
+        row: "n"
+    },
+    {
+        kana: "ニ",
+        romaji: "ni",
+        type: "katakana",
+        row: "n"
+    },
+    {
+        kana: "ヌ",
+        romaji: "nu",
+        type: "katakana",
+        row: "n"
+    },
+    {
+        kana: "ネ",
+        romaji: "ne",
+        type: "katakana",
+        row: "n"
+    },
+    {
+        kana: "ノ",
+        romaji: "no",
+        type: "katakana",
+        row: "n"
+    },
+
+    {
+        kana: "ハ",
+        romaji: "ha",
+        type: "katakana",
+        row: "h"
+    },
+    {
+        kana: "ヒ",
+        romaji: "hi",
+        type: "katakana",
+        row: "h"
+    },
+    {
+        kana: "フ",
+        romaji: "hu", // or fu
+        type: "katakana",
+        row: "h"
+    },
+    {
+        kana: "ヘ",
+        romaji: "he",
+        type: "katakana",
+        row: "h"
+    },
+    {
+        kana: "ホ",
+        romaji: "ho",
+        type: "katakana",
+        row: "h"
+    },
+
+    {
+        kana: "マ",
+        romaji: "ma",
+        type: "katakana",
+        row: "m"
+    },
+    {
+        kana: "ミ",
+        romaji: "mi",
+        type: "katakana",
+        row: "m"
+    },
+    {
+        kana: "ム",
+        romaji: "mu",
+        type: "katakana",
+        row: "m"
+    },
+    {
+        kana: "め",
+        romaji: "me",
+        type: "katakana",
+        row: "m"
+    },
+    {
+        kana: "モ",
+        romaji: "mo",
+        type: "katakana",
+        row: "m"
+    },
+
+    {
+        kana: "ヤ",
+        romaji: "ya",
+        type: "katakana",
+        row: "y"
+    },
+    {
+        kana: "ユ",
+        romaji: "yu",
+        type: "katakana",
+        row: "y"
+    },
+    {
+        kana: "ヨ",
+        romaji: "yo",
+        type: "katakana",
+        row: "y"
+    },
+
+    {
+        kana: "ラ",
+        romaji: "ra",
+        type: "katakana",
+        row: "r"
+    },
+    {
+        kana: "リ",
+        romaji: "ri",
+        type: "katakana",
+        row: "r"
+    },
+    {
+        kana: "ル",
+        romaji: "ru",
+        type: "katakana",
+        row: "r"
+    },
+    {
+        kana: "レ",
+        romaji: "re",
+        type: "katakana",
+        row: "r"
+    },
+    {
+        kana: "ロ",
+        romaji: "ro",
+        type: "katakana",
+        row: "r"
+    },
+    {
+        kana: "ワ",
+        romaji: "wa",
+        type: "katakana",
+        row: "w"
+    },
+    {
+        kana: "ヲ",
+        romaji: "wo",
+        type: "katakana",
+        row: "w"
+    },
+    {
+        kana: "ン",
+        romaji: "n",
+        type: "katakana",
+        row: "w"
+    },
+
+
 ];
 
 export const kana_short = [

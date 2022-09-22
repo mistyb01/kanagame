@@ -106,17 +106,28 @@ function renderList() {
 
 function filterSet() {
     let newArray = []; 
-    const checkboxes = document.querySelectorAll('input[type=checkbox]');
-    checkboxes.forEach(filter => {
+
+    const rowCheckboxes = document.querySelectorAll('.rows input[type=checkbox]');
+    rowCheckboxes.forEach(filter => {
         if (filter.checked) {
-            //console.log(filter.id);
             let filtered = [];
             filtered = kana.filter(card => card.row == filter.id);
-            filtered.forEach(card => { // add the filtered values to the new array
-                newArray.push(card);
-            })
+            // add the filtered values to the new array
+            filtered.forEach(card => { newArray.push(card); })
         }
     })
+
+    const typeCheckboxes = document.querySelectorAll('.type input[type=checkbox]');
+    typeCheckboxes.forEach(filter => {
+        if (filter.checked) {
+            newArray = newArray.filter(card => card.type == filter.id);
+            // add the filtered values to the new array
+            //filtered.forEach(card => { newArray.push(card); })
+        }
+    })
+
+
+
     console.log(newArray);
     currentGame = [...newArray];
     currentIndex = Math.floor(Math.random() * currentGame.length);
