@@ -12,6 +12,7 @@ body {
 
 header {
     text-align: center;
+    margin-top: 20px;
 }
 main {
     text-align: center;
@@ -83,7 +84,7 @@ button {
 .preferences {
     border: 1px solid rgba(255, 235, 205, 0.464);
     padding: 20px;
-    margin-top: 10%;
+    margin-top: 5%;
     font-size: 1.5rem;
 }
 .preferences button {
@@ -104,8 +105,19 @@ button {
 
 }
 
-
-
 h5 {
     border-bottom: 1px solid rgba(255, 235, 205, 0.464);
+}
+
+.progress-bar {
+    width: 60%;
+    border-bottom: 1px solid blanchedalmond;
+    margin: 20px auto;
+}
+
+.color-bar {
+    width: 0%;
+    height: 5px;
+    background-color: blanchedalmond;
+    transition: 0.25s;
 }

@@ -168,7 +168,7 @@ export const kana = [
     },
     {
         kana: "ふ",
-        romaji: "hu", // or fu
+        romaji: "fu", 
         type: "hiragana",
         row: "h"
     },
@@ -454,7 +454,7 @@ export const kana = [
     },
     {
         kana: "フ",
-        romaji: "hu", // or fu
+        romaji: "fu",
         type: "katakana",
         row: "h"
     },
@@ -573,35 +573,3 @@ export const kana = [
 
 ];
 
-export const kana_short = [
-    {
-        kana: "あ",
-        romaji: "a",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "い",
-        romaji: "i",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "う",
-        romaji: "u",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "え",
-        romaji: "e",
-        type: "hiragana",
-        row: "a"
-    },
-    {
-        kana: "お",
-        romaji: "o",
-        type: "hiragana",
-        row: "a"
-    }
-]

@@ -1,4 +1,4 @@
-import { kana, kana_short } from './quizdata.js';
+import { kana } from './quizdata.js';
 
 // document selectors
 const cardDisplay = document.querySelector('.card-display');
@@ -25,6 +25,7 @@ let correctCards = [];
 let incorrectCards = [];
 let currentIndex = 0;
 
+
 function startQuiz() {
     filterSet();
     filterDiv.style.display = 'none';
@@ -35,7 +36,6 @@ function startQuiz() {
     updateScoreUI();
 }
 
-let wrongBefore = false;
 function nextCard() {
     answerInput.focus();
     statusText.innerText = "";
@@ -51,13 +51,15 @@ function updateScoreUI() {
     incorrectDiv.innerText = incorrectCards.length + ' incorrect';
 }
 
+let wrongBefore = false;
 function checkAnswer() {
     
     if (answerInput.value == currentGame[currentIndex].romaji) {
         //add it to the incorrect/correct pile (depends on if they answered right the first time)
         wrongBefore ? incorrectCards.push(currentGame[currentIndex]) : correctCards.push(currentGame[currentIndex]);
         currentGame.splice(currentIndex, 1); //remove the just answered card from the game array
-        
+        updateProgressBar();
+
         if (currentGame.length > 0) {
         // randomize the current index and go to the next card!
         currentIndex = Math.floor(Math.random() * currentGame.length);
@@ -90,6 +92,7 @@ function retryQuiz() {
     incorrectDiv.innerText = '';
     filterDiv.style.display = 'block';
     startBtn.style.display = 'block';
+    updateProgressBar();
 }
 
 function renderList() {
@@ -121,11 +124,13 @@ function filterSet() {
         }
     })
     const typeCheckboxes = document.querySelectorAll('.type input[type=checkbox]');
-    typeCheckboxes.forEach(filter => {
-        if (filter.checked) {
-            newArray = newArray.filter(card => card.type == filter.id);
-        }
-    })
+    //only filters if one (but not the other) is checked
+    if (typeCheckboxes[0].checked && !typeCheckboxes[1].checked) {
+        newArray = newArray.filter(card => card.type == typeCheckboxes[0].id);
+    } else if (!typeCheckboxes[0].checked && typeCheckboxes[1].checked){
+        newArray = newArray.filter(card => card.type == typeCheckboxes[1].id);
+    }
+
     console.log(newArray);
     currentGame = [...newArray];
     currentIndex = Math.floor(Math.random() * currentGame.length);
@@ -143,5 +148,21 @@ function unselectAll() {
     checkboxes.forEach(filter => {
         filter.checked = false;
     })
+}
+
+function updateProgressBar() {
+    let progressBar = document.querySelector('.color-bar');
+    //should stay constant
+    let numberOfCards = correctCards.length + incorrectCards.length + currentGame.length; 
+    let progress = correctCards.length + incorrectCards.length;
+    let progressPercentage = (progress / numberOfCards) * 100 || 0;
+    progressBar.style.width = progressPercentage + "%";
+    console.log("progress:", progress)
+    console.log("numberOfCards:", numberOfCards)
+    console.log("progress%:", progressPercentage)
+    console.log("..................")
+
+
+
 }
 
